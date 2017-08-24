@@ -28,9 +28,9 @@ export class Enum {
     // new.target would be better than this.constructor,
     // but isn’t supported by Babel
     if ({}.hasOwnProperty.call(this.constructor, INITIALIZED)) {
-      throw new Error("Enum classes can’t be instantiated");
+      throw new Error('Enum classes can’t be instantiated');
     }
-    if (typeof instanceProperties === "object" && instanceProperties !== null) {
+    if (typeof instanceProperties === 'object' && instanceProperties !== null) {
       copyProperties(this, instanceProperties);
     }
   }
@@ -57,11 +57,11 @@ export class Enum {
    * The values are create by instantiating the current class.
    */
   public static initEnum(arg: EnumArgType) {
-    Object.defineProperty(this, "enumValues", {
+    Object.defineProperty(this, 'enumValues', {
       value: [],
       configurable: false,
       writable: false,
-      enumerable: true
+      enumerable: true,
     });
     if (Array.isArray(arg)) {
       this._enumValuesFromArray(arg, this); // Typescript not support ES6 version
@@ -106,9 +106,9 @@ export class Enum {
   private static _enumValuesFromObject(obj: any) {
     Object.keys(obj).forEach((key: string) => {
       let keyValue = obj[key];
-      if (typeof keyValue !== "object") {
+      if (typeof keyValue !== 'object') {
         keyValue = {
-          value: obj[key]
+          value: obj[key],
         };
       }
       const value = new this(keyValue);
@@ -118,7 +118,7 @@ export class Enum {
 
   private static _pushEnumValue(enumValue: any, name: string) {
     enumValue.name = name;
-    if (typeof enumValue.value === "undefined") {
+    if (typeof enumValue.value === 'undefined') {
       enumValue.value = this.enumValues.length;
     }
     enumValue.valueOf = function valueOf() {
@@ -128,7 +128,7 @@ export class Enum {
       value: enumValue,
       configurable: false,
       writable: false,
-      enumerable: true
+      enumerable: true,
     });
     this.enumValues.push(enumValue);
   }
