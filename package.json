@@ -1,6 +1,6 @@
 {
   "name": "enumify-mod",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Enumify modification by proposal http://goo.gl/XCh8Lc",
   "keywords": [],
   "main": "dist/enumify-mod.umd.js",
