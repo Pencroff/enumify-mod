@@ -12,12 +12,12 @@ npm i enumify-mod --save
 
  - **[enumify](https://github.com/rauschma/enumify)** implementation in typescript
  - Support `valueOf` method
- ```ecmascript 6
+ ```javascript
     const Color = Enum.create('Color', ['RED', 'GREEN', 'BLUE']);
     Color.GREEN.valueOf() === 1 // true
  ```
  - Support `fromValue` method
- ```ecmascript 6
+ ```javascript
     const Color = Enum.create('Color', {
       RED: '#F00',
       GREEN: '#0F0',
@@ -29,12 +29,12 @@ npm i enumify-mod --save
     Color.fromValue(2) === Color.BLUE // true
  ```
  - Support `fromName` method
- ```ecmascript 6
+ ```javascript
     Color.fromName('GREEN') === Color.GREEN // true
     Color.fromName('BLUE') === Color.BLUE // true
  ```
  - Require repeating all values for avoiding creating additional type
- ```ecmascript 6
+ ```
     class YesNoEnum extends Enum {
       static YES;
       static NO;
