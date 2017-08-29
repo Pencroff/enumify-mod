@@ -1,6 +1,6 @@
-# TypeScript library starter
+# enumify-mod
 
-A starter project that makes creating a TypeScript library extremely easy.
+A JavaScript / TypeScript library for enums - mod of Enumify.
 
 ### Install
 
